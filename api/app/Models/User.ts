@@ -1,13 +1,13 @@
 import { DateTime } from 'luxon'
-import Post from  'app/Models/Post'
-import Forum from 'app/Models/Forum'
+// import Post from  'app/Models/Post'
+// import Forum from 'app/Models/Forum'
 import Hash from '@ioc:Adonis/Core/Hash'
 import {
   column,
   beforeSave,
   BaseModel,
-  hasMany,
-  HasMany
+  // hasMany,
+  // HasMany
 } from '@ioc:Adonis/Lucid/Orm'
 
 export default class User extends BaseModel {
@@ -16,9 +16,6 @@ export default class User extends BaseModel {
 
   @column()
   public email: string
-
-  @column()
-  public name: string;
 
   @column({ serializeAs: null })
   public password: string
@@ -32,11 +29,11 @@ export default class User extends BaseModel {
   @column.dateTime({ autoCreate: true, autoUpdate: true })
   public updatedAt: DateTime
 
-  @hasMany(() => Post)
-  public posts: HasMany<typeof Post>
+  // @hasMany(() => Post)
+  // public posts: HasMany<typeof Post>
 
-  @hasMany(() => Forum)
-  public forums: HasMany<typeof Forum>
+  // @hasMany(() => Forum)
+  // public forums: HasMany<typeof Forum>
 
   @beforeSave()
   public static async hashPassword (user: User) {
