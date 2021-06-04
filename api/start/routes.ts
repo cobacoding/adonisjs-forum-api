@@ -33,4 +33,7 @@ Route.group(() => {
   }).middleware('auth')
   Route.post('/register','AuthController.register')
   Route.post('/login','AuthController.login')
+  Route.post('/upload','ImagesController.upload')
+  Route.get('/download/:fileName','ImagesController.download')
 }).prefix('api')
+
